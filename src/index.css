@@ -1,0 +1,36 @@
+/* This is Glopal css */
+
+
+@font-face{
+  font-family: 3ds ;
+  src:url(./assets/fonts/3ds\ Bold.ttf)
+}
+
+@font-face{
+  font-family: Glory ;
+  src:url(./assets/fonts/Gilroy-Regular.ttf)
+}
+
+:root{
+  --mainYellow: #FFCA40;
+  --mainRed: #c8161D;
+  --mainGray: #808080;
+  --mainWhite: #f8f8f7;
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 3ds;
+
+}
+
+body,
+.App,
+#root{
+  width: 100%;
+  height: 100vh;
+  overflow:hidden ;
+}
