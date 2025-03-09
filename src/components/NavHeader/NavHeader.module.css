@@ -1,0 +1,16 @@
+.backBtn {
+    color: var(--mainGray);
+    width: 30px;
+    height: 30px;
+    transition: ease-in-out 0.5s;
+
+    &:hover {
+        color: var(--mainYellow);
+        transform: rotate(360deg);
+    }
+
+}
+
+.angle {
+    color: var(--mainGray);
+}
