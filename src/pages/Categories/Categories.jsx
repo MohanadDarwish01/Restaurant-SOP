@@ -1,32 +1,37 @@
 import { useNavigate } from 'react-router-dom';
 import NavHeader from '../../components/NavHeader/NavHeader'
-import { useCategoriesData } from '../../store'
+import { useCart, useCategoriesData } from '../../store'
 import style from './Categories.module.css'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import SideCart from '../../components/SideCart/SideCart';
 
 
 
 export default function Categories() {
 
-  const { categories , setActiveId } = useCategoriesData();
+  const { domain, setActiveId, data: appCategories } = useCategoriesData();
   const navigate = useNavigate();
-  const openCategory = (path , cat_Id) => {
-    navigate(path);
-    setActiveId(cat_Id);
+
+  const openCategory = (documentId) => {
+    navigate(documentId);
+    setActiveId(documentId);
 
 
   }
 
-  
+
   return (
     <div className={style.Categories}>
+      
       <NavHeader tabName={"Category"} />
       <div className=' d-flex flex-wrap col-12 p-2 '>
         {
-          categories.map((el) => (
-            <div key={el.documentId} className=' col-10 col-md-6 col-lg-4 p-2' onClick={()=>{openCategory(el.path , el.documentId)}} >
-              <div className={ style.productCard + ' rounded shadow border col-12 p-3'} >
-                <img src={el.catImg} alt="" />
-                <p> {el.name} </p>
+          appCategories.map((el) => (
+            <div key={el.documentId} className=' col-10 col-md-6 col-lg-4 p-2' onClick={() => { openCategory(el.documentId) }} >
+              <div className={style.productCard + ' rounded shadow border col-12 p-3'} >
+                <img src={domain + el.category_img.url} alt="" />
+                <p> {el.category_name} </p>
               </div>
             </div>
           ))
