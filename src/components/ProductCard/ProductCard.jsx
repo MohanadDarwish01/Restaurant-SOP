@@ -16,7 +16,7 @@ export default function ProductCard({ productName, productPrice, productImg, pro
       qty: 1,
       img: (domain + productImg)
     }
-    console.log(obj.img);
+    // console.log(obj.img);
     addToCart(obj)
   }
 

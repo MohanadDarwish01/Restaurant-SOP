@@ -11,13 +11,14 @@ import Categories from "./pages/Categories/Categories";
 import { useCart, useCategoriesData } from "./store";
 import axios from "axios";
 import SideCart from "./components/SideCart/SideCart";
+import InvoicesPage from "./pages/Invoices/Invoices";
 
 
 export default function App() {
     const { domain, setData ,categories } = useCategoriesData();
     const { cartIndex } = useCart();
 
-    const [acceptedPath , setAcceptedPath ] = useState(["/", "/orders", "/settings", "/bills"]) ;
+    const [acceptedPath , setAcceptedPath ] = useState(["/", "/orders", "/settings", "/invoices"]) ;
     const [path, setPath] = useState();
     const location = useLocation();
 
@@ -49,7 +50,7 @@ export default function App() {
                 <Route path="/orders" element={<Categories />}></Route>
                 <Route path="/orders/:id" element={<CategoryProducts />}></Route>
                 <Route path="/settings" element={<h1>Settings</h1>}></Route>
-                <Route path="/bills" element={<h1>Bills</h1>}></Route>
+                <Route path="/invoices" element={<InvoicesPage />}></Route>
                 <Route path="/login" element={<h1>Login Page</h1>}></Route>
                 <Route path="*" element={<h1>404 Page</h1>}></Route>
             </Routes>

@@ -15,7 +15,7 @@ export default function SideCart() {
     useEffect(() => {
         let newTotal = productsInCart.reduce((acc, el) => acc + (el.price * el.qty), 0);
         setTotal(newTotal);
-        console.log(newTotal)
+        // console.log(newTotal)
     }, [productsInCart])
 
 
@@ -46,7 +46,7 @@ export default function SideCart() {
                         <p>Your Cart</p>
                         <table className=' table table-light table-bordered '>
                             <thead>
-                                <tr>
+                                <tr className=' text-center'>
                                     <th>-</th>
                                     <th>Name</th>
                                     <th>Price</th>

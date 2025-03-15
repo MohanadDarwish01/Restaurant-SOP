@@ -54,7 +54,7 @@ export default function CategoryProducts() {
 
 
     return (
-        check && <div className=" flex-grow-1">
+        check && <div className=" flex-grow-1 overflow-auto">
             <NavHeader tabName={categoryInfo.category_name} />
             <h1>Products in Cat : {categoryInfo.category_name}</h1>
             <div className=" col-12 d-flex flex-wrap ">

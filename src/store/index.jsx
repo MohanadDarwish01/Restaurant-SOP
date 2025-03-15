@@ -70,16 +70,28 @@ export const useCart = create((set) => ({
 
     addToCart: (product) => (set((state) => {
         let copy = [...state.productsInCart];
-        let obj = copy.find((el)=> (el.id == product.id));
-        if(obj) {
+        let obj = copy.find((el) => (el.id == product.id));
+        if (obj) {
             state.incrementQty(product.id)
-        }else{
+        } else {
             copy.push(product)
         }
-        return {productsInCart: copy};
+        return { productsInCart: copy };
 
     })),
 
-    resetCart: () => (set(()=>({productsInCart: []}))),
+    resetCart: () => (set(() => ({ productsInCart: [] }))),
 
-}));
+}))
+
+
+export const useInvoiceDetails = create((set) => ({
+    index: false,
+    activeInvoiceId: null,
+
+    openDetails: () => (set(() => ({ index: true }))),
+    closeDetails: () => (set(() => ({ index: false }))),
+
+    setActiveId: (id) => (set(() => ({activeInvoiceId: id}))),
+    reSetActiveId: () => (set(() => ({activeInvoiceId: null}))),
+}))

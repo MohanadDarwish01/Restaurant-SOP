@@ -15,7 +15,7 @@ export default function SideMenu() {
     const [links] = useState([
         { id: 1, name: "Dashboard", icon: <MdSpaceDashboard />, path: "/" },
         { id: 2, name: "Food & Drinks", icon: <IoFastFood />, path: "/orders" },
-        { id: 3, name: "Bills", icon: <FaSackDollar />, path: "/bills" },
+        { id: 3, name: "Invoices", icon: <FaSackDollar />, path: "/invoices" },
         { id: 4, name: "Settings", icon: <IoSettings />, path: "/settings" },
     ]);
 
