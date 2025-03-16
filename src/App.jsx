@@ -12,6 +12,7 @@ import { useCart, useCategoriesData } from "./store";
 import axios from "axios";
 import SideCart from "./components/SideCart/SideCart";
 import InvoicesPage from "./pages/Invoices/Invoices";
+import LoginPage from "./pages/Login/Login";
 
 
 export default function App() {
@@ -51,7 +52,7 @@ export default function App() {
                 <Route path="/orders/:id" element={<CategoryProducts />}></Route>
                 <Route path="/settings" element={<h1>Settings</h1>}></Route>
                 <Route path="/invoices" element={<InvoicesPage />}></Route>
-                <Route path="/login" element={<h1>Login Page</h1>}></Route>
+                <Route path="/login" element={<LoginPage />}></Route>
                 <Route path="*" element={<h1>404 Page</h1>}></Route>
             </Routes>
         </div>

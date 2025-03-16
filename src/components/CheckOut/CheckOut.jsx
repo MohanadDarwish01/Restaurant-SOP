@@ -3,6 +3,7 @@ import { useCart, useCategoriesData } from '../../store';
 import style from './CheckOut.module.css'
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import moment from 'moment';
 
 export default function CheckOut() {
     const { closeCheckOut, productsInCart, resetCart, closeCart } = useCart();
@@ -33,6 +34,8 @@ export default function CheckOut() {
         let endPoint = "/api/invoices";
         let data = {
             invoice_total: total,
+            // invoice_date: '2025-03-15',
+            invoice_date: moment().format('YYYY-MM-DD'),
             pos_user: {
                 connect: ['jcegzptjimh1id3a093u8k5h'],
             }
@@ -56,6 +59,7 @@ export default function CheckOut() {
             let url = domain + "/api/invoices-details"
             let data = {
                 product_qty: el.qty,
+
                 invoice: {
                     connect: [invoiceId]
                 },
@@ -95,7 +99,7 @@ export default function CheckOut() {
                 <h4>Customer amount is : </h4>
                 <input value={customerAmount} onChange={handleChange} className=' form-control' type="number" placeholder='Enter Amount Here' />
                 <h4>Remain is : <span className={remain < 0 ? "text-danger" : "text-success"}> {remain} </span> </h4>
-                <button onClick={handleSaveInvoice} className=' btn btn-primary w-100' disabled={remain < 0 ? true : false} >Save & Print</button>
+                <button onClick={handleSaveInvoice} className=' btn btn-primary w-100' disabled={remain < 0 || customerAmount == ' ' ? true : false} >Save & Print</button>
             </div>
         </div>
     )

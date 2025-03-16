@@ -1,0 +1,68 @@
+.loginBg {
+    background: var(--mainYellow) url('../../assets/imgs/login_cover.png') center/ cover;
+    overflow: auto;
+}
+
+.formDs {
+    background-color: rgb(255, 255, 255);
+    width: 520px;
+}
+
+.btnDs {
+    background-color: var(--mainWhite);
+    text-decoration: none;
+
+}
+
+.btnDs>span {
+    color: var(--mainGray);
+}
+
+
+
+
+.inputDs {
+    background: none;
+    border-color: rgba(0, 0, 0, 0.25);
+    color: var(--mainRed);
+
+    &::placeholder{
+        color: rgba(0, 0, 0, 0.25);
+
+    }
+}
+
+.inputDs:focus {
+    background: none;
+    box-shadow: none;
+    border-color: var(--mainRed);
+    color: var(--mainRed);
+}
+
+.checkDs{
+    
+    border-color: rgba(0, 0, 0, 0.25);
+    
+}
+.checkDs:focus{
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.25);
+    
+   
+}
+
+.linkDs{
+    text-decoration: none;
+    color: var(--mainRed);
+}
+
+
+.submitDs{
+    background: linear-gradient(90deg, var(--mainRed) 0%, var(--mainYellow) 100%);
+    border: none;
+    color: white;
+}
+
+.submitDs:hover{
+    color: white;
+}
